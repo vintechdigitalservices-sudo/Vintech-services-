@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINTECH DIGITAL SERVICES | Premium Digital Solutions</title>
+    <link rel="icon" href="logo.png">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #001F54;
+            --primary-dark: #001338;
+            --accent: #FF6A00;
+            --accent-light: #FF8A33;
+            --white: #ffffff;
+            --light: #f8fafc;
+            --gray-light: #e2e8f0;
+            --gray: #64748b;
+            --dark: #1e293b;
+            --text: #222;
+            --maxw: 1200px;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body { 
+            font-family: 'Inter', Arial, sans-serif; 
+            color: var(--text); 
+            background: var(--white); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        img { 
+            max-width: 100%; 
+            display: block; 
+        }
+
+        .wrap { 
+            max-width: var(--maxw); 
+            margin: 0 auto; 
+            padding: 0 24px; 
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Navigation */
+        nav.site-nav { 
+            background: var(--white); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        nav .wrap { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        .nav-logo span {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 28px; 
+            flex-wrap: wrap; 
+        }
+
+        nav ul li a { 
+            font-weight: 500; 
+            color: var(--primary); 
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover { 
+            color: var(--accent); 
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Buttons */
+        .btn { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            text-align: center; 
+            cursor: pointer; 
+            transition: var(--transition);
+            gap: 8px;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary { 
+            background: var(--accent); 
+            color: var(--white); 
+        }
+
+        .btn-primary:hover { 
+            background: var(--accent-light); 
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline { 
+            background: transparent; 
+            color: var(--primary); 
+            border: 2px solid var(--primary); 
+        }
+
+        .btn-outline:hover { 
+            background: var(--primary); 
+            color: var(--white); 
+            transform: translateY(-3px);
+        }
+
+        .btn-light { 
+            background: var(--light); 
+            color: var(--primary); 
+        }
+
+        .btn-light:hover { 
+            background: var(--gray-light); 
+            transform: translateY(-3px);
+        }
+
+        .btn-contact {
+            background: var(--accent);
+            color: var(--white);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-contact:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Contact Buttons Container */
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            overflow: hidden;
+            margin-top: 82px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .slide-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .slide-image {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .slide-image:hover {
+            transform: perspective(1000px) rotateY(0);
+        }
+
+        .slide-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-short {
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-short::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+
+        .about-container { 
+            display: flex; 
+            gap: 60px; 
+            align-items: center; 
+        }
+
+        .about-image { 
+            flex: 1; 
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            box-shadow: var(--shadow-lg);
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .about-image.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .about-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content { 
+            flex: 1; 
+            padding: 20px 0;
+            transform: translateX(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .about-content.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .about-content h3 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; 
+            color: var(--primary); 
+            margin-bottom: 20px; 
+        }
+
+        .about-content p { 
+            margin-bottom: 24px; 
+            color: var(--dark); 
+            line-height: 1.7; 
+            font-size: 1.05rem; 
+        }
+
+        /* Services */
+        .services { 
+            background: var(--light);
+        }
+
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .service-card { 
+            background: var(--white); 
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0;
+            border: 2px solid var(--accent);
+        }
+
+        .service-card.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            transition: var(--transition);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-card .body { 
+            padding: 30px; 
+        }
+
+        .service-card h3 { 
+            color: var(--primary); 
+            margin-bottom: 12px; 
+            font-size: 1.3rem; 
+        }
+
+        .service-card p { 
+            color: var(--gray); 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .service-features li {
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .service-features li i {
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        /* Why Choose Us */
+        .why { 
+            background: var(--white);
+        }
+
+        .why-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .why-card { 
+            background: var(--white); 
+            padding: 40px 30px; 
+            border-radius: var(--radius); 
+            text-align: center; 
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .why-card.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .why-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: var(--shadow-lg);
+            border-top: 4px solid var(--accent);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+            font-size: 32px;
+        }
+
+        .why-card h4 { 
+            color: var(--primary); 
+            margin-bottom: 16px; 
+            font-size: 1.3rem; 
+        }
+
+        .why-card p { 
+            color: var(--gray); 
+            line-height: 1.6; 
+        }
+
+        /* Packages Promo */
+        .packages-promo { 
+            background: var(--white);
+        }
+
+        .packages-wrap { 
+            display: flex; 
+            gap: 60px; 
+            align-items: center; 
+            background: var(--light); 
+            padding: 60px; 
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transform: scale(0.95);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .packages-wrap.animated {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .packages-wrap img { 
+            flex: 1; 
+            min-width: 260px; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: var(--radius); 
+            box-shadow: var(--shadow);
+        }
+
+        .packages-content { 
+            flex: 1; 
+        }
+
+        .packages-content h3 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; 
+            color: var(--primary); 
+            margin-bottom: 20px; 
+        }
+
+        .packages-content p { 
+            margin-bottom: 24px; 
+            color: var(--dark); 
+            line-height: 1.7; 
+            font-size: 1.05rem; 
+        }
+
+        /* Academy */
+        .academy { 
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .academy::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .academy-header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; 
+            color: var(--white); 
+            font-weight: 700; 
+        }
+
+        .academy-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .academy-image { 
+            flex: 1;
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            box-shadow: var(--shadow-lg);
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .academy-image.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .academy-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: var(--transition);
+        }
+
+        .academy-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .academy-content { 
+            flex: 1;
+            transform: translateX(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .academy-content.animated {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .academy-content p { 
+            color: rgba(255,255,255,0.9); 
+            line-height: 1.7; 
+            font-size: 1.05rem; 
+            margin-bottom: 24px; 
+        }
+
+        .academy-features {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .academy-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .academy-features li i {
+            color: var(--accent);
+        }
+
+        /* Feedback Form */
+        .feedback { 
+            background: var(--light);
+        }
+
+        .feedback-header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+
+        .feedback-header h2 { 
+            color: var(--primary); 
+            margin-bottom: 12px; 
+        }
+
+        .feedback-container { 
+            display: flex; 
+            gap: 60px; 
+            align-items: center; 
+            background: var(--white); 
+            padding: 60px; 
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .feedback-image { 
+            flex: 1; 
+            min-height: 400px; 
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            box-shadow: var(--shadow);
+        }
+
+        .feedback-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        .feedback-form { 
+            flex: 1; 
+        }
+
+        .feedback-form form { 
+            display: grid; 
+            gap: 20px; 
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-form label { 
+            font-weight: 600; 
+            color: var(--primary); 
+            margin-bottom: 8px;
+        }
+
+        .feedback-form input, .feedback-form textarea { 
+            width: 100%; 
+            padding: 14px; 
+            border-radius: 8px; 
+            border: 1px solid var(--gray-light); 
+            font-family: inherit; 
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .feedback-form input:focus, .feedback-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.1);
+        }
+
+        .feedback-form .submit { 
+            background: var(--accent); 
+            color: var(--white); 
+            padding: 16px 24px; 
+            border-radius: 8px; 
+            border: 0; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: var(--transition);
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .feedback-form .submit:hover { 
+            background: var(--accent-light); 
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        footer { 
+            background: var(--primary-dark); 
+            color: var(--white); 
+            padding: 60px 24px 30px; 
+        }
+
+        footer .footer-wrap { 
+            max-width: var(--maxw); 
+            margin: 0 auto; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 50px; 
+            justify-content: space-between; 
+        }
+
+        footer .col { 
+            min-width: 200px; 
+        }
+
+        footer .col h4 { 
+            color: var(--accent); 
+            margin-bottom: 20px; 
+            font-size: 1.2rem; 
+        }
+
+        footer .col p { 
+            margin-bottom: 16px; 
+            line-height: 1.6; 
+            color: rgba(255,255,255,0.8);
+        }
+
+        footer .col a { 
+            display: block; 
+            margin-bottom: 10px; 
+            transition: var(--transition);
+            color: rgba(255,255,255,0.8);
+        }
+
+        footer .col a:hover { 
+            color: var(--accent); 
+            transform: translateX(5px);
+        }
+
+        .social-icons { 
+            display: flex; 
+            gap: 12px; 
+            margin-top: 16px; 
+        }
+
+        .social-icons a { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover { 
+            background: var(--accent); 
+            transform: translateY(-3px); 
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .slide-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .slide-text {
+                padding-right: 0;
+            }
+            
+            .about-container, .academy-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .hero-slider {
+                height: 70vh;
+                min-height: 500px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2, .academy-header {
+                font-size: 2rem;
+            }
+            
+            nav ul { 
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .packages-wrap, .feedback-container {
+                flex-direction: column;
+                padding: 40px 30px;
+            }
+            
+            footer .footer-wrap { 
+                flex-direction: column; 
+                gap: 40px; 
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .section-header h2, .academy-header {
+                font-size: 1.7rem;
+            }
+            
+            .packages-wrap, .feedback-container {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 82px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                display: flex !important;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid var(--gray-light);
+            }
+            
+            .nav-cta-mobile {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            
+            .nav-cta-mobile .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="site-nav" id="navbar">
+    <div class="wrap">
+        <div class="nav-logo">
+            <img src="logo.png" alt="VINTECH Logo">
+            <span>VINTECH</span>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Navigation Menu -->
+        <ul id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="#academy">Academy</a></li>
+            <li><a href="#feedback">Contact</a></li>
+            <li class="nav-cta-mobile">
+                <a class="btn btn-outline" href="tel:+2348124022971"><i class="fas fa-phone"></i> Call</a>
+                <a class="btn btn-primary" href="https://wa.me/2348124022971" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </li>
+        </ul>
+        
+        <!-- Desktop CTA Buttons -->
+        <div class="nav-cta">
+            <a class="btn btn-outline" href="tel:+2348124022971"><i class="fas fa-phone"></i> Call</a>
+            <a class="btn btn-primary" href="https://wa.me/2348124022971" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+    <div class="slide active">
+        <div class="slide-content">
+            <div class="slide-text">
+                <h1 class="hero-title">Transform Your Digital Presence</h1>
+                <p class="hero-subtitle">We craft premium branding, web solutions, and marketing strategies that drive measurable growth for ambitious businesses.</p>
+                <div class="btn-row">
+                    <a class="btn btn-primary" href="#services">Explore Services</a>
+                </div>
+            </div>
+            <div class="slide-image">
+                <img src="hero.jpg" alt="Digital transformation">
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="slide-text">
+                <h1 class="hero-title">Premium Branding That Converts</h1>
+                <p class="hero-subtitle">From compelling visuals to strategic positioning, we build brands that command attention and drive customer action.</p>
+                <div class="btn-row">
+                    <a class="btn btn-primary" href="#services">Explore Services</a>
+                </div>
+            </div>
+            <div class="slide-image">
+                <img src="service2.jpg" alt="Branding services">
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="slide-content">
+            <div class="slide-text">
+                <h1 class="hero-title">Results-Driven Digital Marketing</h1>
+                <p class="hero-subtitle">Our data-backed strategies deliver qualified leads, increased conversions, and sustainable business growth.</p>
+                <div class="btn-row">
+                    <a class="btn btn-primary" href="#services">Explore Services</a>
+                </div>
+            </div>
+            <div class="slide-image">
+                <img src="service6.jpg" alt="Digital marketing">
+            </div>
+        </div>
+    </div>
+    <div class="slider-nav">
+        <div class="slider-dot active"></div>
+        <div class="slider-dot"></div>
+        <div class="slider-dot"></div>
+    </div>
+</section>
+
+<!-- About Short -->
+<section class="about-short section-padding" id="about">
+    <div class="wrap">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="about-image.jpg" alt="VINTECH Services">
+            </div>
+            <div class="about-content">
+                <h3>Your Strategic Digital Partner</h3>
+                <p>At VINTECH DIGITAL SERVICES, we blend creative excellence with strategic thinking to deliver digital solutions that drive real business growth. Our approach is built on understanding your unique challenges and crafting tailored strategies that deliver measurable results.</p>
+                <p>We don't just create beautiful designs—we build conversion-focused assets that increase visibility, engage your audience, and maximize profitability. Partner with us to transform your digital presence and achieve sustainable business success.</p>
+                <div class="contact-buttons">
+                    <a class="btn btn-contact" href="https://wa.me/2348124022971?text=hi%20vintech%20digital%20services%20can%20I%20have%20more%20info%20on%20your%20services" target="_blank">Chat on WhatsApp</a>
+                    <a class="btn btn-contact" href="tel:+2348124022971">Call</a>
+                    <a class="btn btn-contact" href="mailto:vintechdigitalservices@gmail.com?subject=Service%20Inquiry&body=hi%20vintech%20digital%20services%20can%20I%20have%20more%20info%20on%20your%20services">Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services section-padding" id="services">
+    <div class="wrap">
+        <div class="section-header">
+            <h2>Our Premium Services</h2>
+            <p>Comprehensive digital solutions designed to elevate your brand and accelerate growth</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="service2.jpg" alt="Graphics Design">
+                <div class="body">
+                    <h3>High-Converting Ad Creatives</h3>
+                    <p>Boost your brand with eye-catching graphics, logos, flyers, ad designs, and engaging video/animation. We create clean, high-impact visuals optimized for attention, engagement, and stronger ad performance across all platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Attention-grabbing visual design</li>
+                        <li><i class="fas fa-check"></i> Platform-optimized creatives</li>
+                        <li><i class="fas fa-check"></i> Conversion-focused layouts</li>
+                    </ul>
+                    <a class="btn btn-contact" href="ads-creative.html">View Packages</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="service6.jpg" alt="Advertising & Promotions">
+                <div class="body">
+                    <h3>Strategic Advertising</h3>
+                    <p>Data-driven ad campaigns with precise targeting, A/B testing, and detailed ROI tracking to maximize your advertising impact and deliver qualified leads.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Targeted audience segmentation</li>
+                        <li><i class="fas fa-check"></i> Performance tracking & optimization</li>
+                        <li><i class="fas fa-check"></i> Multi-platform campaign management</li>
+                    </ul>
+                    <a class="btn btn-contact" href="advertising.html">View Packages</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="service8.jpg" alt="Website Development">
+                <div class="body">
+                    <h3>Website Development</h3>
+                    <p>Responsive business and e-commerce sites engineered to convert visitors into customers, with intuitive UX, fast loading times, and SEO-optimized structure.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Mobile-optimized responsive design</li>
+                        <li><i class="fas fa-check"></i> SEO-friendly architecture</li>
+                        <li><i class="fas fa-check"></i> Conversion-focused user experience</li>
+                    </ul>
+                    <a class="btn btn-contact" href="web-development.html">View Packages</a>
+                </div>
+            </div>
+            <section style="background-color:#05244d; padding:60px 20px; text-align:center; color:white; font-family:Arial, sans-serif;">
+    <h2 style="font-size:32px; font-weight:700; margin-bottom:20px;">Don't Know Where to Start Your<br>Growth Journey?</h2><p style="font-size:18px; max-width:600px; margin:0 auto 40px; line-height:1.6;">
+    Book a dedicated strategy session to talk directly with a Vintech expert. We’ll map out
+    the fastest path to maximize your profits and scale your business.
+</p>
+
+<a href="https://wa.me/2348124022971?text=I%20want%20to%20book%20a%20strategy%20appointment%20call%20for%20my%20business" 
+   style="display:inline-block; background:white; color:#05244d; padding:15px 30px; border-radius:12px; text-decoration:none; font-size:18px; font-weight:600;">
+    Book Your Strategy Appointment
+</a>
+
+</section>
+              </div>
+  </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why section-padding">
+    <div class="wrap">
+        <div class="section-header">
+            <h2>Why Businesses Choose VINTECH</h2>
+            <p>We deliver exceptional value through proven methodologies and client-focused approaches</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Proven Results Focus</h4>
+                <p>We prioritize measurable outcomes—increased leads, higher engagement, and improved conversion rates that directly impact your bottom line.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h4>Transparent Partnership</h4>
+                <p>Clear pricing, honest communication, and collaborative processes ensure you're always informed and confident in our partnership.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h4>Rapid Response Support</h4>
+                <p>Accessible via WhatsApp, calls, or email with prompt responses and efficient solutions to keep your projects moving forward seamlessly.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4>Expert Team</h4>
+                <p>Seasoned professionals with proven track records across diverse industries, delivering exceptional quality and innovative solutions.</p>
+            </div>
+          
+                </div>
+            </div>
+           <!--  GOOGLE FONT FOR STYLISH HEADER  -->
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+<section id="testimonials" style="padding: 60px 20px; background: #f9f9f9;">
+
+<style>
+    /* Stylish header font */
+    #testimonials h2 {
+        font-size: 32px;
+        font-family: "Abril Fatface", serif;
+        font-weight: 400;
+        color: #001F54;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    #testimonials p.section-sub {
+        font-size: 16px;
+        color: #444;
+        max-width: 600px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .review-container {
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .review-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .review-text {
+        font-style: italic;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .client-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .client-name {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        color: #001F54;
+    }
+
+    .client-role {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+    }
+</style>
+
+  <div>
+      <h2>WHAT OUR CLIENTS SAY ABOUT US</h2>
+      <p class="section-sub">
+          Trust the people we helped maximize their profit and digital potential.
+      </p>
+  </div>
+
+  <div class="review-container">
+
+      <!-- CLIENT 1 -->
+      <div class="review-card">
+          <p class="review-text">
+              "Vintech Digital services is simply the best, I've seen and I'm convinced."
+          </p>
+          <div class="client-info">
+              <img src="client1.jpg" alt="Client 1" class="client-img">
+              <div>
+                  <h4 class="client-name">Ikechukwu Jeremiah Ifeanyi</h4>
+                  <p class="client-role">CEO • Dapper Clothings</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- CLIENT 2 -->
+      <div class="review-card">
+          <p class="review-text">
+              "Vintech provides much higher quality in business and creative services that helps 
+              businesses boom. It has helped my business grow more, so I recommend their services 
+              to anyone who wants the best for their business."
+          </p>
+          <div class="client-info">
+              <img src="client2.jpg" alt="Client 2" class="client-img">
+              <div>
+                  <h4 class="client-name">Amuzie Felicia Anulika</h4>
+                  <p class="client-role">Head Mistress • Above All Int'l School</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- CLIENT 3 -->
+      <div class="review-card">
+          <p class="review-text">
+              “They delivered exactly what I wanted with impressive speed. The design quality was 
+              top-notch, and the professional image generation they provided saved me money. 
+              Everything was done quickly, creatively, and with a high level of professionalism. 
+              I'm fully satisfied and highly recommend their services.”
+          </p>
+          <div class="client-info">
+              <img src="client3.jpg" alt="Client 3" class="client-img">
+              <div>
+                  <h4 class="client-name">Collins Kelechukwu</h4>
+                  <p class="client-role">CEO • Collins Gas Investment</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- CLIENT 4 -->
+      <div class="review-card">
+          <p class="review-text">
+              “Working with Vintech has been an excellent experience. The creativity, professionalism, 
+              and attention to detail are unmatched. Their communication is clear, and they always 
+              deliver exactly what you need. They are good in listening and identifying customer 
+              needs and corrections.”
+          </p>
+          <div class="client-info">
+              <img src="client4.jpg" alt="Client 4" class="client-img">
+              <div>
+                  <h4 class="client-name">Chukwudubem</h4>
+                  <p class="client-role">MD • Echo Collections Boutique</p>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</section>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</section>
+        </div>
+    </div>
+</section>
+
+        </div>
+    </div>
+</section>
+
+<!-- Packages Promo -->
+<section class="packages-promo section-padding">
+    <div class="wrap">
+        <div class="packages-wrap">
+            <img src="packages.jpg" alt="Service Packages">
+            <div class="packages-content">
+                <h3>Tailored Solutions for Every Business Stage</h3>
+                <p>Whether you're launching a new venture, establishing brand presence, or scaling to the next level, we have precisely calibrated packages to match your ambitions and budget. Our tiered approach ensures you invest in exactly what you need—no more, no less.</p>
+                <p>From essential starter packages to comprehensive enterprise solutions, discover the perfect fit for your growth trajectory with transparent pricing and clearly defined deliverables.</p>
+                <a class="btn btn-primary" href="packages.html">Explore Service Packages</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Academy -->
+<section class="academy section-padding" id="academy">
+    <div class="wrap">
+        <div class="academy-header">Master In-Demand Digital Skills</div>
+        <div class="academy-container">
+            <div class="academy-image">
+                <img src="academy-image.jpg" alt="VINTECH Academy Students">
+            </div>
+            <div class="academy-content">
+                <p>Transform your career with our comprehensive digital skills training programs. Learn from industry practitioners through hands-on projects that simulate real-world challenges and build portfolio-ready work.</p>
+                <p>Our curriculum covers the most sought-after digital disciplines—from graphic design and video production to digital marketing strategy and full-stack web development.</p>
+                <ul class="academy-features">
+                    <li><i class="fas fa-check"></i> Industry-expert instructors</li>
+                    <li><i class="fas fa-check"></i> Project-based learning approach</li>
+                    <li><i class="fas fa-check"></i> Career-focused certification</li>
+                    <li><i class="fas fa-check"></i> Job placement assistance</li>
+                </ul>
+                <a class="btn btn-light" href="https://vintechdigitalacademy.netlify.app" target="_blank">Explore Academy Programs</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feedback -->
+<section class="feedback section-padding" id="feedback">
+    <div class="wrap">
+        <div class="section-header">
+            <h2>Start Your Transformation Today</h2>
+            <p>Ready to elevate your digital presence? Let's discuss your project and craft a customized solution.</p>
+        </div>
+        <div class="feedback-container">
+            <div class="feedback-image">
+                <img src="contact-image.jpg" alt="Contact VINTECH">
+            </div>
+            <div class="feedback-form">
+                <form action="https://formsubmit.co/vintechdigitalservices@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" name="Phone">
+                    </div>
+                    <div class="form-group">
+                        <label>How can we help you?</label>
+                        <textarea name="Message" rows="4" required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="Website Inquiry — VINTECH">
+                    <input type="hidden" name="_next" value="thankyou.html">
+                    <button type="submit" class="submit">Begin Your Project</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-wrap">
+        <div class="col">
+            <div class="nav-logo">
+                <img src="logo.png" alt="VINTECH Logo">
+                <span style="color: white;">VINTECH</span>
+            </div>
+            <p>Premium digital solutions that transform brands and drive measurable business growth.</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+2348124022971">+234 812 402 2971</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:vintechdigitalservices@gmail.com">vintechdigitalservices@gmail.com</a></p>
+        </div>
+        <div class="col">
+            <h4>Connect With Us</h4>
+            <div class="social-icons">
+                <a href="https://wa.me/2348124022971" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/share/1DBb1LC5XD/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/vintechdigitalservices?igsh=MXgyOTZneHVwODMwaQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@vintech.digital.s?_r=1&_t=ZS-91PyPIfnPF4" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Quick Links</h4>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="about.html">About Us</a>
+            <a href="packages.html">Service Packages</a>
+            <a href="academy.html">Digital Academy</a>
+            <a href="#feedback">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>Our Services</h4>
+            <a href="ads-creative.html">Branding & Design</a>
+            <a href="web-development.html">Web Development</a>
+            <a href="advertising.html">Digital Marketing</a>
+            <a href="#services">Automation Solutions</a>
+            <a href="#academy">Skills Training</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2025 VINTECH DIGITAL SERVICES — All rights reserved
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const body = document.body;
+
+    // Close mobile menu when clicking outside
+    function closeMobileMenu(event) {
+        if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            body.removeEventListener('click', closeMobileMenu);
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = navMenu.classList.toggle('active');
+        
+        // Update icon
+        mobileMenuBtn.innerHTML = isActive ? 
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        
+        // Add/remove click outside listener
+        if (isActive) {
+            setTimeout(() => {
+                body.addEventListener('click', closeMobileMenu);
+            }, 10);
+        } else {
+            body.removeEventListener('click', closeMobileMenu);
+        }
+    });
+
+    // Close menu when clicking on links
+    navMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            body.removeEventListener('click', closeMobileMenu);
+        }
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Hero Slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = (n + slides.length) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+    
+    // Auto slide
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000);
+
+    // Scroll animations
+    function checkScroll() {
+        const elements = document.querySelectorAll('.about-image, .about-content, .why-card, .service-card, .packages-wrap, .academy-image, .academy-content');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animated');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+</script>
+
+</body>
+</html>
