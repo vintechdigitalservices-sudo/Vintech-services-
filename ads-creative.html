@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>High Converting Ads Creative | VINTECH DIGITAL SERVICES</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+    body{background:#fff;color:#001F54;line-height:1.7}
+    a{text-decoration:none}
+    header{background:#001F54;color:#fff;text-align:center;padding:30px 20px}
+    header img{width:100px;margin-bottom:10px}
+    header h1{color:#FF6A00;font-size:2.2rem}
+    section{max-width:1100px;margin:40px auto;padding:0 20px}
+    section h2{text-align:center;font-size:2rem;margin-bottom:12px;color:#001F54}
+    section p{text-align:center;color:#333;margin-bottom:18px}
+    /* currency toggle */
+    .currency-bar{display:flex;justify-content:center;gap:12px;margin-bottom:20px;align-items:center}
+    .currency-toggle{background:#f4f4f9;border-radius:999px;padding:6px;display:inline-flex;gap:6px;border:1px solid rgba(0,0,0,0.06)}
+    .currency-btn{border-radius:999px;padding:8px 14px;border:0;background:transparent;color:#001F54;font-weight:700;cursor:pointer}
+    .currency-btn.active{background:#FF6A00;color:#fff;box-shadow:0 6px 18px rgba(255,106,0,0.18)}
+    .rate-info{font-size:0.95rem;color:#666}
+    .rate-info small{display:block;color:#888;font-size:0.82rem;margin-top:6px}
+    /* packages */
+    .packages{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:12px}
+    .package-card{background:#f4f4f9;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:25px;width:270px;transition:0.3s}
+    .package-card:hover{transform:translateY(-6px)}
+    .package-card h3{color:#FF6A00;font-size:1.5rem;margin-bottom:10px;text-align:center}
+    .price{text-align:center;font-size:1.2rem;color:#001F54;font-weight:bold;margin-bottom:16px}
+    .package-card ul{list-style:none;margin-left:0;color:#333;font-size:0.95rem;margin-bottom:18px;padding-left:0}
+    .package-card ul li{position:relative;padding-left:28px;margin-bottom:10px}
+    .package-card ul li::before{content:"✔";position:absolute;left:0;color:#FF6A00;font-weight:bold}
+    .btn{display:block;background:#FF6A00;color:#fff;text-align:center;padding:10px 0;border-radius:8px;font-weight:700;transition:0.25s;cursor:pointer}
+    .btn:hover{background:#e55d00}
+    footer{background:#001F54;color:#fff;text-align:center;padding:20px;margin-top:36px}
+    footer a{color:#FF6A00;margin:0 10px}
+    footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.packages{flex-direction:column;align-items:center}.currency-bar{flex-direction:column;gap:8px}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="VINTECH DIGITAL SERVICES Logo">
+    <h1>High Converting Ads Creative</h1>
+  </header>
+
+  <section>
+    <h2>Transform Your Brand with High Converting Design</h2>
+    <p>Our High Converting Ads Creative service provides professional graphics, videos, and branding solutions that attract attention, engage your audience, and boost conversions.</p>
+
+    <!-- Currency toggle -->
+    <div class="currency-bar" aria-hidden="false">
+      <div class="currency-toggle" role="tablist" aria-label="Currency toggle">
+        <button id="btn-ngn" class="currency-btn active" aria-pressed="true">₦ Naira</button>
+        <button id="btn-usd" class="currency-btn" aria-pressed="false">$ USD</button>
+      </div>
+      <div class="rate-info" id="rate-info">Exchange rate: <span id="rate-value">fetching...</span>
+        <small id="rate-updated"></small>
+      </div>
+    </div>
+
+    <div class="packages">
+      <!-- Starter -->
+      <div class="package-card">
+        <h3>Starter Package</h3>
+        <!-- store raw NGN numeric value in data-ngn, keep text accessible -->
+        <p class="price" data-ngn="25000" data-ngn-text="₦25,000">₦25,000</p>
+        <ul>
+          <li>1 Logo Design</li>
+          <li>3 Social Media Graphics</li>
+          <li>1 Short Video</li>
+          <li>2 Rounds of Revision</li>
+          <li>48-Hour Delivery</li>
+        </ul>
+        <a class="btn" target="_blank"
+           href="https://wa.me/2348124022971?text=Hi%20Vintage%20Digital%20Services,%20I%20am%20interested%20in%20the%20Starter%20Package%20for%20High%20Converting%20Ads%20Creative%20Design.%20How%20do%20I%20go%20about%20it?">Hire Package</a>
+      </div>
+
+      <!-- Growth -->
+      <div class="package-card">
+        <h3>Growth Package</h3>
+        <p class="price" data-ngn="40000" data-ngn-text="₦40,000">₦40,000</p>
+        <ul>
+          <li>Branding Kit (Logo & Brand Colors)</li>
+          <li>5 Social Media Graphics</li>
+          <li>3 Short Videos & Animations</li>
+          <li>72-Hour Delivery</li>
+          <li>2 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank"
+           href="https://wa.me/2348124022971?text=Hi%20Vintage%20Digital%20Services,%20I%20am%20interested%20in%20the%20Growth%20Package%20for%20High%20Converting%20Ads%20Creative%20Design.%20How%20do%20I%20go%20about%20it?">Hire Package</a>
+      </div>
+
+      <!-- Professional -->
+      <div class="package-card">
+        <h3>Professional Package</h3>
+        <p class="price" data-ngn="60000" data-ngn-text="₦60,000">₦60,000</p>
+        <ul>
+          <li>Full Branding Kit (Logo, Colors, Fonts)</li>
+          <li>10 Social Media Graphics</li>
+          <li>5 Videos & Animations</li>
+          <li>Logo Intro Animation Included</li>
+          <li>4 Days Delivery</li>
+          <li>3 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank"
+           href="https://wa.me/2348124022971?text=Hi%20Vintage%20Digital%20Services,%20I%20am%20interested%20in%20the%20Professional%20Package%20for%20High%20Converting%20Ads%20Creative%20Design.%20How%20do%20I%20go%20about%20it?">Hire Package</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="package-card">
+        <h3>Premium Package</h3>
+        <p class="price" data-ngn="80000" data-ngn-text="₦80,000">₦80,000</p>
+        <ul>
+          <li>Full Branding Kit</li>
+          <li>15 Social Media Graphics</li>
+          <li>10 Videos & Animations</li>
+          <li>Logo Intro Animation Included</li>
+          <li>5 Days Delivery</li>
+          <li>5 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank"
+           href="https://wa.me/2348124022971?text=Hi%20Vintage%20Digital%20Services,%20I%20am%20interested%20in%20the%20Premium%20Package%20for%20High%20Converting%20Ads%20Creative%20Design.%20How%20do%20I%20go%20about%20it?">Hire Package</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+    <p>&copy; 2025 VINTECH DIGITAL SERVICES — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // ---------- CONFIG ----------
+    // Insert your UniRateAPI key here (you already provided it)
+    const UNIRATE_API_KEY = 'Tgr9rBx7u9sOCjkjzd1g84q1HIpw5Qa5tgsJKl1VgQMs3aLrQ82mDDHxvnzVLSvw';
+    // Use the /convert endpoint for exact conversions
+    const CONVERT_ENDPOINT = 'https://api.unirateapi.com/api/convert';
+    // Cache time for fetched rates/results (ms)
+    const CACHE_TTL = 60 * 1000; // 60 seconds
+
+    // UI elements
+    const btnNgn = document.getElementById('btn-ngn');
+    const btnUsd = document.getElementById('btn-usd');
+    const rateInfo = document.getElementById('rate-info');
+    const rateValueEl = document.getElementById('rate-value');
+    const rateUpdatedEl = document.getElementById('rate-updated');
+
+    // Simple cache object
+    const conversionCache = {
+      lastFetched: 0,
+      // map amount -> { result, timestamp }
+      results: new Map(),
+      // store last rate info for display
+      lastRate: null,
+      lastRateTime: 0
+    };
+
+    // Format USD with two decimals (option B)
+    function formatUSD(value) {
+      // value is numeric
+      return '$' + Number(value).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
+    // Call Unirate convert endpoint for a single NGN amount (returns numeric USD)
+    async function convertNgnToUsdAmount(ngnAmount) {
+      // use cached result if fresh
+      const cacheEntry = conversionCache.results.get(ngnAmount);
+      const now = Date.now();
+      if (cacheEntry && (now - cacheEntry.timestamp) < CACHE_TTL) {
+        return cacheEntry.result;
+      }
+
+      const url = `${CONVERT_ENDPOINT}?api_key=${UNIRATE_API_KEY}&from=NGN&to=USD&amount=${encodeURIComponent(ngnAmount)}`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Network response was not ok');
+        const json = await res.json();
+        // UniRate convert returns structure like { result: 27.22, ... } (example)
+        const result = json?.result ?? null;
+        if (result === null) throw new Error('Invalid response from UniRate');
+        // cache
+        conversionCache.results.set(ngnAmount, { result, timestamp: now });
+        // also store last rate (approx) by dividing (if amount > 0)
+        if (ngnAmount > 0) {
+          conversionCache.lastRate = result / (ngnAmount / 1); // result per NGN
+          conversionCache.lastRateTime = now;
+        }
+        return result;
+      } catch (err) {
+        console.error('Convert API error:', err);
+        throw err;
+      }
+    }
+
+    // Convenience: fetch and update all prices to USD
+    async function updateAllPricesToUSD() {
+      const priceEls = document.querySelectorAll('.price');
+      // gather unique NGN amounts to avoid duplicate requests
+      const amounts = Array.from(new Set(Array.from(priceEls).map(el => Number(el.dataset.ngn))));
+      try {
+        // convert each unique amount, cache used internally
+        const conversionPromises = amounts.map(a => convertNgnToUsdAmount(a).then(r => ({a, r})));
+        const results = await Promise.all(conversionPromises);
+        const map = new Map(results.map(x => [x.a, x.r]));
+        // update dom
+        priceEls.forEach(el => {
+          const ngn = Number(el.dataset.ngn);
+          const usd = map.get(ngn);
+          if (usd != null) {
+            el.textContent = formatUSD(usd);
+            el.dataset.current = 'USD';
+          } else {
+            // fallback: show NGN text
+            el.textContent = el.dataset.ngnText || ('₦' + ngn.toLocaleString());
+            el.dataset.current = 'NGN';
+          }
+        });
+        // update rate display: derive rate using smallest non-zero amount to get reasonable rate
+        if (results.length) {
+          // compute approximate rate: USD per 1 NGN = usd / ngn
+          const sample = results[0];
+          const approxRate = sample.r / sample.a; // USD per NGN
+          // convert to NGN per USD for display (i.e., 1 USD = X NGN)
+          const ngnPerUsd = approxRate ? (1 / approxRate) : null;
+          if (ngnPerUsd) {
+            rateValueEl.textContent = `₦${Math.round(ngnPerUsd).toLocaleString()} = $1`;
+            rateUpdatedEl.textContent = 'Updated: ' + new Date().toLocaleTimeString();
+            conversionCache.lastRate = ngnPerUsd;
+            conversionCache.lastRateTime = Date.now();
+          } else {
+            rateValueEl.textContent = '—';
+            rateUpdatedEl.textContent = '';
+          }
+        }
+      } catch (err) {
+        // on error, restore NGN prices and inform console
+        console.error('Failed to update prices to USD:', err);
+        document.querySelectorAll('.price').forEach(el => {
+          el.textContent = el.dataset.ngnText || ('₦' + Number(el.dataset.ngn).toLocaleString());
+          el.dataset.current = 'NGN';
+        });
+        rateValueEl.textContent = 'Unavailable';
+        rateUpdatedEl.textContent = '';
+      }
+    }
+
+    function restoreAllPricesToNGN() {
+      document.querySelectorAll('.price').forEach(el => {
+        el.textContent = el.dataset.ngnText || ('₦' + Number(el.dataset.ngn).toLocaleString());
+        el.dataset.current = 'NGN';
+      });
+      // show last known rate if available
+      if (conversionCache.lastRate) {
+        const ngnPerUsd = conversionCache.lastRate;
+        rateValueEl.textContent = `₦${Math.round(ngnPerUsd).toLocaleString()} = $1`;
+        const d = new Date(conversionCache.lastRateTime || Date.now());
+        rateUpdatedEl.textContent = 'Updated: ' + d.toLocaleTimeString();
+      } else {
+        rateValueEl.textContent = '—';
+        rateUpdatedEl.textContent = '';
+      }
+    }
+
+    // toggle handlers
+    btnNgn.addEventListener('click', async () => {
+      btnNgn.classList.add('active'); btnNgn.setAttribute('aria-pressed','true');
+      btnUsd.classList.remove('active'); btnUsd.setAttribute('aria-pressed','false');
+      restoreAllPricesToNGN();
+    });
+
+    btnUsd.addEventListener('click', async () => {
+      btnUsd.classList.add('active'); btnUsd.setAttribute('aria-pressed','true');
+      btnNgn.classList.remove('active'); btnNgn.setAttribute('aria-pressed','false');
+      // when switching to USD, update all
+      await updateAllPricesToUSD();
+    });
+
+    // On initial load, make sure NGN prices show (they do by default) and try to fetch a rate in background
+    (async function init() {
+      // ensure NGN visible
+      restoreAllPricesToNGN();
+      // pre-fetch conversions for speed (but do not switch)
+      const uniqueAmounts = Array.from(new Set(Array.from(document.querySelectorAll('.price')).map(el => Number(el.dataset.ngn))));
+      // prefetch small sample to populate cache and rate display
+      if (uniqueAmounts.length) {
+        try {
+          // fetch a single conversion for the first amount to derive rate and cache
+          await convertNgnToUsdAmount(uniqueAmounts[0]);
+          // update rate display without switching view
+          const last = conversionCache.lastRate;
+          if (last) {
+            const rounded = Math.round(last);
+            rateValueEl.textContent = `₦${rounded.toLocaleString()} = $1`;
+            rateUpdatedEl.textContent = 'Updated: ' + new Date().toLocaleTimeString();
+          } else {
+            rateValueEl.textContent = '—';
+            rateUpdatedEl.textContent = '';
+          }
+        } catch (e) {
+          rateValueEl.textContent = 'Unavailable';
+          rateUpdatedEl.textContent = '';
+          console.warn('Pre-fetch failed (this is okay):', e);
+        }
+      } else {
+        rateValueEl.textContent = '—';
+      }
+    })();
+  </script>
+
+</body>
+</html>
