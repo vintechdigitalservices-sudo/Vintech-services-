@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Development | VINTECH DIGITAL SERVICES</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+    body{background:#fff;color:#001F54;line-height:1.7}
+    a{text-decoration:none}
+    header{background:#001F54;color:#fff;text-align:center;padding:30px 20px}
+    header img{width:100px;margin-bottom:10px}
+    header h1{color:#FF6A00;font-size:2.2rem}
+    section{max-width:1100px;margin:40px auto;padding:0 20px}
+    section h2{text-align:center;font-size:2rem;margin-bottom:12px;color:#001F54}
+    section p{text-align:center;color:#333;margin-bottom:18px}
+    /* currency toggle */
+    .currency-bar{display:flex;justify-content:center;gap:12px;margin-bottom:20px;align-items:center}
+    .currency-toggle{background:#f4f4f9;border-radius:999px;padding:6px;display:inline-flex;gap:6px;border:1px solid rgba(0,0,0,0.06)}
+    .currency-btn{border-radius:999px;padding:8px 14px;border:0;background:transparent;color:#001F54;font-weight:700;cursor:pointer}
+    .currency-btn.active{background:#FF6A00;color:#fff;box-shadow:0 6px 18px rgba(255,106,0,0.18)}
+    .rate-info{font-size:0.95rem;color:#666}
+    .rate-info small{display:block;color:#888;font-size:0.82rem;margin-top:6px}
+    /* packages */
+    .packages{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:12px}
+    .package-card{background:#f4f4f9;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:25px;width:280px;transition:0.3s}
+    .package-card:hover{transform:translateY(-6px)}
+    .package-card h3{color:#FF6A00;font-size:1.5rem;margin-bottom:10px;text-align:center}
+    .price{text-align:center;font-size:1.2rem;color:#001F54;font-weight:bold;margin-bottom:16px}
+    .package-card ul{list-style:none;margin-left:0;color:#333;font-size:0.95rem;margin-bottom:18px;padding-left:0}
+    .package-card ul li{position:relative;padding-left:28px;margin-bottom:10px}
+    .package-card ul li::before{content:"✔";position:absolute;left:0;color:#FF6A00;font-weight:bold}
+    .btn{display:block;background:#FF6A00;color:#fff;text-align:center;padding:10px 0;border-radius:8px;font-weight:700;transition:0.25s;cursor:pointer}
+    .btn:hover{background:#e55d00}
+    footer{background:#001F54;color:#fff;text-align:center;padding:20px;margin-top:36px}
+    footer a{color:#FF6A00;margin:0 10px}
+    footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.packages{flex-direction:column;align-items:center}.currency-bar{flex-direction:column;gap:8px}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="VINTECH DIGITAL SERVICES Logo">
+    <h1>Website Development Services</h1>
+  </header>
+
+  <section>
+    <h2>Build Your Online Presence with Professional Websites</h2>
+    <p>Our Website Development service provides custom, responsive, and conversion-focused websites designed to grow your business online.</p>
+
+    <!-- Currency toggle -->
+    <div class="currency-bar">
+      <div class="currency-toggle">
+        <button id="btn-ngn" class="currency-btn active">₦ Naira</button>
+        <button id="btn-usd" class="currency-btn">$ USD</button>
+      </div>
+      <div class="rate-info">Exchange rate: <span id="rate-value">fetching...</span>
+        <small id="rate-updated"></small>
+      </div>
+    </div>
+
+    <div class="packages">
+
+      <!-- Starter Package -->
+      <div class="package-card">
+        <h3>Starter Package</h3>
+        <p class="price" data-ngn="30000" data-ngn-text="₦30,000 (1-Page Website)">₦30,000 (1-Page Website)</p>
+        <ul>
+          <li>Responsive Design</li>
+          <li>Basic Branding (Logo & Colors)</li>
+          <li>WhatsApp Contact Integration</li>
+          <li>48-Hour Delivery</li>
+          <li>2 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank" href="https://wa.me/2348124022971?text=Hi%20VINTECH!%20I'm%20interested%20in%20the%20Starter%20Website%20Development%20Package.%20How%20do%20I%20get%20started?">Hire Package</a>
+      </div>
+
+      <!-- Growth Package -->
+      <div class="package-card">
+        <h3>Growth Package</h3>
+        <p class="price" data-ngn="50000" data-ngn-text="₦50,000 (1-Page), ₦75,000 (2-Page), ₦90,000 (3-Page)">₦50,000 (1-Page), ₦75,000 (2-Page), ₦90,000 (3-Page)</p>
+        <ul>
+          <li>Custom Branding Kit</li>
+          <li>Social Media Integrations</li>
+          <li>Basic SEO Setup</li>
+          <li>3-Day Delivery</li>
+          <li>2 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank" href="https://wa.me/2348124022971?text=Hi%20VINTECH!%20I'm%20interested%20in%20the%20Growth%20Website%20Development%20Package.%20How%20do%20I%20get%20started?">Hire Package</a>
+      </div>
+
+      <!-- Professional Package -->
+      <div class="package-card">
+        <h3>Professional Package</h3>
+        <p class="price" data-ngn="100000" data-ngn-text="₦100,000 (3-Page), ₦150,000 (Up to 5-Page)">₦100,000 (3-Page), ₦150,000 (Up to 5-Page)</p>
+        <ul>
+          <li>Full Branding Kit</li>
+          <li>Video Animations</li>
+          <li>SEO Optimization</li>
+          <li>Social Media Integration</li>
+          <li>4-Day Delivery</li>
+          <li>4 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank" href="https://wa.me/2348124022971?text=Hi%20VINTECH!%20I'm%20interested%20in%20the%20Professional%20Website%20Development%20Package.%20How%20do%20I%20get%20started?">Hire Package</a>
+      </div>
+
+      <!-- Premium Package -->
+      <div class="package-card">
+        <h3>Premium Package</h3>
+        <p class="price" data-ngn="180000" data-ngn-text="₦180,000 (3-Page), ₦200,000 (5-10 Pages)">₦180,000 (3-Page), ₦200,000 (5-10 Pages)</p>
+        <ul>
+          <li>E-Commerce Ready</li>
+          <li>Full Branding + Strategy</li>
+          <li>5-10 Page Website</li>
+          <li>2 Animated Videos Embedded</li>
+          <li>Full SEO & Marketing Integration</li>
+          <li>5-Day Delivery</li>
+          <li>5 Rounds of Revision</li>
+        </ul>
+        <a class="btn" target="_blank" href="https://wa.me/2348124022971?text=Hi%20VINTECH!%20I'm%20interested%20in%20the%20Premium%20Website%20Development%20Package.%20How%20do%20I%20get%20started?">Hire Package</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+    <p>&copy; 2025 VINTECH DIGITAL SERVICES — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const UNIRATE_API_KEY = 'Tgr9rBx7u9sOCjkjzd1g84q1HIpw5Qa5tgsJKl1VgQMs3aLrQ82mDDHxvnzVLSvw';
+    const CONVERT_ENDPOINT = 'https://api.unirateapi.com/api/convert';
+    const CACHE_TTL = 60*1000;
+
+    const btnNgn = document.getElementById('btn-ngn');
+    const btnUsd = document.getElementById('btn-usd');
+    const rateValueEl = document.getElementById('rate-value');
+    const rateUpdatedEl = document.getElementById('rate-updated');
+
+    const conversionCache = { lastRate:null, lastRateTime:0, results:new Map() };
+
+    function formatUSD(value){return '$'+Number(value).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+    async function convertNgnToUsdAmount(ngnAmount){
+      const cacheEntry = conversionCache.results.get(ngnAmount);
+      const now = Date.now();
+      if(cacheEntry && now-cacheEntry.timestamp<CACHE_TTL) return cacheEntry.result;
+      const url = `${CONVERT_ENDPOINT}?api_key=${UNIRATE_API_KEY}&from=NGN&to=USD&amount=${encodeURIComponent(ngnAmount)}`;
+      try{
+        const res = await fetch(url); const json = await res.json();
+        const result = json?.result ?? null; if(result===null) throw new Error('Invalid response');
+        conversionCache.results.set(ngnAmount,{result,timestamp:now});
+        if(ngnAmount>0){conversionCache.lastRate=result/ngnAmount; conversionCache.lastRateTime=now;}
+        return result;
+      }catch(err){console.error('Convert API error:',err);throw err;}
+    }
+
+    async function updateAllPricesToUSD(){
+      const priceEls=document.querySelectorAll('.price');
+      const amounts=Array.from(new Set(Array.from(priceEls).map(el=>Number(el.dataset.ngn))));
+      try{
+        const results=await Promise.all(amounts.map(a=>convertNgnToUsdAmount(a).then(r=>({a,r}))));
+        const map=new Map(results.map(x=>[x.a,x.r]));
+        priceEls.forEach(el=>{const ngn=Number(el.dataset.ngn); const usd=map.get(ngn); el.textContent=usd!=null?formatUSD(usd):el.dataset.ngnText; el.dataset.current='USD';});
+        if(results.length){const sample=results[0]; const approxRate=sample.r/sample.a; const ngnPerUsd=approxRate?1/approxRate:null; if(ngnPerUsd){rateValueEl.textContent=`₦${Math.round(ngnPerUsd).toLocaleString()} = $1`; rateUpdatedEl.textContent='Updated: '+new Date().toLocaleTimeString(); conversionCache.lastRate=ngnPerUsd; conversionCache.lastRateTime=Date.now();}else{rateValueEl.textContent='—'; rateUpdatedEl.textContent='';}}
+      }catch(err){console.error('Failed to update prices:',err); document.querySelectorAll('.price').forEach(el=>{el.textContent=el.dataset.ngnText; el.dataset.current='NGN';}); rateValueEl.textContent='Unavailable'; rateUpdatedEl.textContent='';}
+    }
+
+    function restoreAllPricesToNGN(){
+      document.querySelectorAll('.price').forEach(el=>{el.textContent=el.dataset.ngnText; el.dataset.current='NGN';});
+      if(conversionCache.lastRate){rateValueEl.textContent=`₦${Math.round(conversionCache.lastRate).toLocaleString()} = $1`; rateUpdatedEl.textContent='Updated: '+new Date(conversionCache.lastRateTime||Date.now()).toLocaleTimeString();}
+      else{rateValueEl.textContent='—'; rateUpdatedEl.textContent='';}
+    }
+
+    btnNgn.addEventListener('click',()=>{btnNgn.classList.add('active'); btnUsd.classList.remove('active'); restoreAllPricesToNGN();});
+    btnUsd.addEventListener('click',async()=>{btnUsd.classList.add('active'); btnNgn.classList.remove('active'); await updateAllPricesToUSD();});
+
+    (async function init(){restoreAllPricesToNGN(); const priceEls=document.querySelectorAll('.price'); if(priceEls.length){try{await convertNgnToUsdAmount(Number(priceEls[0].dataset.ngn)); const last=conversionCache.lastRate;if(last){rateValueEl.textContent=`₦${Math.round(last).toLocaleString()} = $1`; rateUpdatedEl.textContent='Updated: '+new Date().toLocaleTimeString();}else{rateValueEl.textContent='—'; rateUpdatedEl.textContent='';}}catch(e){rateValueEl.textContent='Unavailable'; rateUpdatedEl.textContent='';}}})();
+  </script>
+
+</body>
+</html>
