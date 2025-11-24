@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - VINTECH DIGITAL SERVICES</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Custom Variables - Keeping original styles */
+  :root {
+    --navy: #001F54;
+    --orange: #FF6A00;
+    --white: #ffffff;
+    --muted: #f4f4f9;
+    --card: #f9f9fb;
+    --text: #222;
+    --maxw: 1200px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, Arial, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 18px; }
+
+  /* Header & Navigation */
+  header.site-header { background: var(--navy); color: var(--white); padding: 20px 0; }
+  .header-wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo { width: 100px; }
+  nav ul { display: flex; list-style: none; gap: 28px; }
+  nav a { color: var(--white); font-weight: 500; transition: color 0.3s ease; padding: 8px 0; }
+  nav a:hover { color: var(--orange); }
+  nav a.active { color: var(--orange); border-bottom: 2px solid var(--orange); }
+
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    color: var(--navy);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 16px;
+  }
+  .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--orange);
+  }
+  .section-header h1, .section-header h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  /* Hero Section */
+  .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #00308F 100%); color: var(--white); padding: 80px 0; text-align: center; }
+  .page-hero h1 { font-size: 3rem; margin-bottom: 16px; }
+  .page-hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+  /* About Content */
+  .about-content { padding: 60px 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 60px; }
+  .about-image { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+  .about-text h2 { color: var(--navy); margin-bottom: 20px; font-size: 2rem; }
+  .about-text p { margin-bottom: 20px; font-size: 1.1rem; }
+
+  /* Mission Vision */
+  .mission-vision { background: var(--muted); padding: 60px 0; }
+  .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .mv-card { background: var(--white); padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+  .mv-card i { font-size: 3rem; color: var(--orange); margin-bottom: 20px; }
+  .mv-card h3 { color: var(--navy); margin-bottom: 16px; font-size: 1.5rem; }
+
+  /* Team Section */
+  .team { padding: 60px 0; }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+  .team-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; }
+  .team-card img { width: 100%; height: 300px; object-fit: cover; }
+  .team-card .info { padding: 24px; }
+  .team-card h3 { color: var(--navy); margin-bottom: 8px; }
+  .team-card .role { color: var(--orange); font-weight: 600; margin-bottom: 12px; }
+
+  /* Stats */
+  .stats { background: var(--navy); color: var(--white); padding: 60px 0; text-align: center; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+  .stat-card h3 { font-size: 3rem; color: var(--orange); margin-bottom: 8px; }
+  .stat-card p { font-size: 1.1rem; opacity: 0.9; }
+
+  /* CTA */
+  .cta { padding: 60px 0; text-align: center; }
+  .cta h2 { color: var(--navy); margin-bottom: 20px; font-size: 2.2rem; }
+  .cta p { max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem; }
+
+  /* Buttons */
+  .btn { display: inline-block; padding: 12px 28px; border-radius: 8px; font-weight: 600; text-align: center; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; }
+  .btn-primary { background: var(--orange); color: var(--white); border: none; }
+  .btn-primary:hover { background: #e55a00; transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+
+  /* Footer */
+  footer { background: var(--navy); color: var(--white); padding: 36px 18px 24px; }
+  footer .footer-wrap { max-width: var(--maxw); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 36px; justify-content: space-between; }
+  footer .col { min-width: 200px; }
+  footer .col h4 { color: var(--orange); margin-bottom: 16px; font-size: 1.2rem; }
+  footer .col p { margin-bottom: 12px; line-height: 1.6; }
+  footer .col a { display: block; margin-bottom: 8px; transition: color 0.3s ease; }
+  footer .col a:hover { color: var(--orange); }
+  /* Corrected social icons styles for proper display */
+  .social-icons { display: flex; gap: 12px; margin-top: 12px; }
+  .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); font-size: 1.2rem; transition: all 0.3s ease; }
+  .social-icons a:hover { background: var(--orange); background: #e55a00; transform: translateY(-3px); }
+  .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .footer-links a { color: var(--white); transition: color 0.3s ease; }
+  .footer-links a:hover { color: var(--orange); }
+
+  /* Chatbot styles */
+  .chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: Inter, sans-serif;
+  }
+  .chat-button {
+    background: var(--orange);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+  }
+  .chat-button:hover { transform: scale(1.05); }
+
+  .chat-window {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    width: 360px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  .chat-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0;
+  }
+  .chat-header h3 { font-weight: 600; font-size: 1.1rem; }
+  .chat-header button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .chat-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background: var(--muted);
+  }
+
+  .chat-input {
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+  }
+  .chat-input input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 1rem;
+    outline: none;
+  }
+  .chat-input button {
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .chat-input button:hover:not(:disabled) { background: #e55a00; }
+  .chat-input button:disabled { background: #ccc; cursor: not-allowed; }
+
+  .message {
+    margin-bottom: 12px;
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  .message.user {
+    background: var(--navy);
+    color: var(--white);
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+  }
+  .message.bot {
+    background: var(--white);
+    color: var(--text);
+    margin-right: auto;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .message-content h4 { font-weight: 600; color: var(--orange); margin-bottom: 8px; }
+  .message img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  .loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    font-style: italic;
+    color: #666;
+  }
+  .loading-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+  .loading-indicator span:nth-child(1) { animation-delay: -0.32s; }
+  .loading-indicator span:nth-child(2) { animation-delay: -0.16s; }
+  
+  @keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+  }
+
+  @media (max-width: 768px) {
+    .header-wrap { flex-direction: column; gap: 20px; }
+    nav ul { gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .about-grid, .mv-grid { grid-template-columns: 1fr; }
+    .page-hero h1 { font-size: 2.2rem; }
+    .section-header h1, .section-header h2 { font-size: 2rem; }
+    footer .footer-wrap { flex-direction: column; gap: 24px; }
+    
+    /* CTA button full-width on mobile */
+    .cta .btn {
+      width: 100%;
+    }
+
+    /* Full screen chat on small devices */
+    .chatbot-container {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5); /* Overlay */
+    }
+    .chat-window {
+      width: 95%;
+      height: 90%;
+      max-width: none;
+      max-height: none;
+    }
+    .chat-button {
+      display: none; /* Hide button when window is open */
+    }
+    .chat-window.hidden {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .chat-window {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-wrap">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="VINTECH logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="packages.html">Service Packages</a></li>
+        <li><a href="academy.html">Digital Academy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Page Content -->
+<section class="page-hero">
+  <div class="wrap">
+    <h1>About VINTECH</h1>
+    <p>Learn about our mission, values, and the team behind your digital success</p>
+  </div>
+</section>
+
+<section class="about-content">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-image">
+        <!-- Placeholder image -->
+        <img src="https://placehold.co/600x400/001F54/ffffff?text=VINTECH+Team+Collaboration" alt="VINTECH Team Collaboration">
+      </div>
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>Founded with a vision to democratize digital excellence, VINTECH DIGITAL SERVICES emerged from a simple observation: many businesses struggle to navigate the complex digital landscape while maintaining quality and affordability.</p>
+        <p>We started as a small team of passionate digital experts and have grown into a full-service agency serving clients across various industries. Our journey has been guided by one principle: deliver exceptional value while making advanced digital solutions accessible to all.</p>
+        <p>Today, we're proud to be the trusted digital partner for startups, established businesses, and individuals looking to make their mark in the digital world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission-vision">
+  <div class="wrap">
+    <div class="mv-grid">
+      <div class="mv-card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Mission</h3>
+        <p>To empower businesses and individuals with cutting-edge digital solutions that drive growth, enhance visibility, and create meaningful connections in an increasingly digital world.</p>
+      </div>
+      <div class="mv-card">
+        <i class="fas fa-eye"></i>
+        <h3>Our Vision</h3>
+        <p>To become Africa's leading digital services provider, recognized for innovation, reliability, and transformative impact on businesses and communities we serve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-content">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Our Values</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <i class="fas fa-medal"></i>
+        <h3>Excellence</h3>
+        <p>We never settle for mediocre. Every project receives our full attention and commitment to quality.</p>
+      </div>
+      <div class="mv-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Integrity</h3>
+        <p>Honest communication and transparent practices build the trust that forms our client relationships.</p>
+      </div>
+      <div class="mv-card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Innovation</h3>
+        <p>We continuously explore new technologies and strategies to keep our clients ahead of the curve.</p>
+      </div>
+      <div class="mv-card">
+        <i class="fas fa-users"></i>
+        <h3>Collaboration</h3>
+        <p>We work with you as partners, ensuring your vision and goals are at the center of everything we do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>150+</h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-card">
+        <h3>50+</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-card">
+        <h3>long-term</h3>
+        <p>Long-term Experience</p>
+      </div>
+      <div class="stat-card">
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Meet Our Team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <!-- Placeholder image -->
+        <img src="https://placehold.co/600x800/FF6A00/ffffff?text=CEO+Photo" alt="CEO">
+        <div class="info">
+          <h3>Chukwuemeka Emmanuel</h3>
+          <p class="role">Founder & CEO</p>
+          <p>Creative Technologist with working experience in branding and automation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Let's discuss how VINTECH can help transform your digital presence and drive your business forward.</p>
+    <!-- WhatsApp Link with Pre-filled Message -->
+    <a href="https://wa.me/2348124022971?text=I%27m%20ready%20to%20start%20a%20project%2C%20what%20are%20your%20services." target="_blank" class="btn btn-primary">Get Started Today (WhatsApp)</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="col">
+      <!-- Placeholder logo image -->
+      <img src="https://placehold.co/110x30/FFFFFF/001F54?text=VINTECH" alt="VINTECH Logo" style="width:110px;margin-bottom:12px;">
+      <p>VINTECH DIGITAL SERVICES — Branding • Video • Automation • Web</p>
+      <p>Call: <a href="tel:+2348124022971">+234 812 402 2971</a></p>
+      <p>Email: <a href="mailto:vintechdigitalservices@gmail.com">vintechdigitalservices@gmail.com</a></p>
+    </div>
+    <div class="col">
+      <h4>Connect with Us</h4>
+      <div class="social-icons">
+        <a href="https://wa.me/2348124022971" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/1DBb1LC5XD/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/vintechdigitalservices?igsh=MXgyOTZneHVwODMwaQ==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@vintech.digital.s?_r=1&_t=ZS-91PyPIfnPF4" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://linkedin.com/company/vintech-digital" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Quick Links</h4>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="about.html">About Us</a>
+        <a href="packages.html">Service Packages</a>
+        <a href="academy.html">Digital Academy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:28px;color:rgba(255,255,255,0.7);padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
+    © 2025 VINTECH DIGITAL SERVICES — All rights reserved
+  </div>
+</footer>
+
+<!-- AI Chatbot Integration -->
+<div class="chatbot-container">
+  <!-- Chat Button -->
+  <div id="chat-btn" class="chat-button">
+    <i class="fas fa-comment-dots"></i>
+  </div>
+  
+  <!-- Chat Window -->
+  <div id="chat-window" class="chat-window hidden" style="display: none;">
+    <div class="chat-header">
+      <h3>Vinnie (VINTECH Sales Agent)</h3>
+      <button id="close-chat-btn"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="chat-body" class="chat-body">
+      <!-- Messages will appear here -->
+      <div class="message bot">
+        <div class="message-content">
+          <h4>Welcome to VINTECH!</h4>
+          Hello there! I'm Vinnie, your Chief Digital Strategist. Ready to transform your digital presence? Ask me about our packages, pricing, or how we can elevate your brand today!
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chat-input-text" placeholder="Ask Vinnie a question...">
+      <button id="send-chat-btn">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  const apiKey = "";
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+  const chatBtn = document.getElementById('chat-btn');
+  const chatWindow = document.getElementById('chat-window');
+  const closeChatBtn = document.getElementById('close-chat-btn');
+  const chatBody = document.getElementById('chat-body');
+  const chatInputText = document.getElementById('chat-input-text');
+  const sendChatBtn = document.getElementById('send-chat-btn');
+
+  const CHAT_HISTORY_KEY = 'vintech_chat_history';
+
+  // --- Chat UI Functions ---
+
+  function toggleChatWindow() {
+    const isHidden = chatWindow.style.display === 'none';
+    chatWindow.style.display = isHidden ? 'flex' : 'none';
+    chatBtn.style.display = isHidden ? 'none' : 'flex';
+
+    if (isHidden) {
+      chatWindow.classList.remove('hidden');
+      chatBtn.classList.add('hidden');
+      scrollToBottom();
+    } else {
+      chatWindow.classList.add('hidden');
+      chatBtn.classList.remove('hidden');
+    }
+  }
+
+  function scrollToBottom() {
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', sender);
+    
+    let contentHTML = `<div class="message-content">${text}</div>`;
+    
+    // Simple check to render images if links are present
+    const imageRegex = /(https:\/\/placehold\.co\/[0-9x]+[^ \n]*)/g;
+    
+    const textWithImages = text.replace(imageRegex, (match) => {
+        return `<img src="${match}" alt="Sample Image" onerror="this.onerror=null;this.src='https://placehold.co/300x200/cccccc/333333?text=Image+Unavailable';">`;
+    });
+
+    messageDiv.innerHTML = textWithImages;
+    chatBody.appendChild(messageDiv);
+    scrollToBottom();
+  }
+
+  function createLoadingIndicator() {
+    const loadingDiv = document.createElement('div');
+    loadingDiv.id = 'loading';
+    loadingDiv.classList.add('loading-indicator', 'bot');
+    loadingDiv.innerHTML = 'Vinnie is typing... <span></span><span></span><span></span>';
+    chatBody.appendChild(loadingDiv);
+    scrollToBottom();
+  }
+
+  function removeLoadingIndicator() {
+    const loadingDiv = document.getElementById('loading');
+    if (loadingDiv) {
+      loadingDiv.remove();
+    }
+  }
+
+  // --- History Management ---
+
+  function loadHistory() {
+    const historyJson = sessionStorage.getItem(CHAT_HISTORY_KEY);
+    if (historyJson) {
+      const history = JSON.parse(historyJson);
+      // Clear initial welcome message
+      chatBody.innerHTML = ''; 
+      history.forEach(msg => {
+        // Only load user and bot messages, skip system prompt for display
+        if (msg.role !== 'system') {
+          addMessage(msg.parts[0].text, msg.role === 'user' ? 'user' : 'bot');
+        }
+      });
+      if (history.length === 0) {
+        // Re-add initial message if history was empty
+        addInitialMessage();
+      }
+    } else {
+      addInitialMessage();
+    }
+  }
+
+  function addInitialMessage() {
+    chatBody.innerHTML = `
+      <div class="message bot">
+        <div class="message-content">
+          <h4>Welcome to VINTECH!</h4>
+          Hello there! I'm Vinnie, your Chief Digital Strategist. Ready to transform your digital presence? Ask me about our packages, pricing, or how we can elevate your brand today!
+        </div>
+      </div>
+    `;
+  }
+
+  function getChatHistoryForAPI() {
+    const historyJson = sessionStorage.getItem(CHAT_HISTORY_KEY);
+    return historyJson ? JSON.parse(historyJson) : [];
+  }
+
+  function saveMessageToHistory(role, text) {
+    const history = getChatHistoryForAPI();
+    history.push({ role: role, parts: [{ text: text }] });
+    sessionStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(history));
+  }
+
+  // --- API and Main Logic ---
+
+  // Detailed System Instruction for the AI Sales Agent
+  const systemPrompt = `
+    You are Vinnie, the Chief Digital Strategist and lead Sales Agent for VINTECH DIGITAL SERVICES.
+    
+    **Persona & Expertise:**
+    * **Experience:** You have 10+ years of deep expertise in digital marketing, conversion-focused copywriting, and full-stack digital strategy (Branding, Video Production, Automation, Web Development).
+    * **Goal:** Your primary objective is to convert leads into paid clients. Be persuasive, enthusiastic, results-focused, and subtly guide the conversation towards investment and payment.
+    * **Tone:** Professional, encouraging, and highly knowledgeable. Always use language that highlights ROI and client success.
+
+    **Business Knowledge (MANDATORY TO USE):**
+    
+    1.  **Core Services:** Branding, High-Conversion Web/App Development, Explainer Video Production, and Business Automation (CRM/Sales Funnels).
+    
+    2.  **Packages (Use these exact names and price ranges to start the sales pitch):**
+        * **Starter Boost:** Ideal for new businesses. Focuses on foundational branding and a simple 5-page website. *Price: ₦150,000 - ₦300,000.*
+        * **Growth Accelerator:** Best for scaling businesses. Includes advanced SEO, explainer video, and an integrated sales funnel. *Price: ₦450,000 - ₦800,000.*
+        * **Enterprise Transformation:** Custom solution for large-scale operations. Full automation, comprehensive branding, and ongoing support. *Price: ₦1,000,000+.*
+    
+    3.  **Image Samples (Use these URLs when asked for work samples):**
+        * Landing Page Design: https://placehold.co/400x300/FF6A00/FFFFFF?text=High-Conversion+Landing+Page
+        * Brand Identity Mockup: https://placehold.co/400x300/001F54/FFFFFF?text=Professional+Brand+Identity
+        * Explainer Video Still: https://placehold.co/400x300/F4F4F9/001F54?text=Animated+Video+Sample
+    
+    4.  **Payment Information (Provide only when the client is clearly ready to pay or asks for payment details):**
+        * Account Name: VINTECH DIGITAL SERVICES
+        * Bank: Access Bank
+        * Account Number: 0045678901 (Mock Number)
+        * **Crucial Note:** Always end the payment message with a strong call-to-action, such as "Once payment is confirmed, we initiate the discovery phase immediately. Let's get started!"
+    
+    **Guidelines:**
+    * Do not mention the price ranges until asked, but always position the packages as high-value investments.
+    * Encourage the user to choose a package that aligns with their goals.
+    * Never break character or reveal that you are an AI model.
+  `;
+
+  async function sendMessage() {
+    const userMessage = chatInputText.value.trim();
+    if (userMessage === '') return;
+
+    // 1. Display user message and clear input
+    addMessage(userMessage, 'user');
+    saveMessageToHistory('user', userMessage);
+    chatInputText.value = '';
+    sendChatBtn.disabled = true;
+
+    // 2. Show loading indicator
+    createLoadingIndicator();
+
+    const chatHistory = getChatHistoryForAPI();
+
+    const payload = {
+        contents: chatHistory,
+        systemInstruction: {
+            parts: [{ text: systemPrompt }]
+        },
+    };
+
+    try {
+      let response;
+      for (let i = 0; i < 3; i++) { // Retry loop for exponential backoff
+        response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          break;
+        }
+        
+        // Wait before retrying (exponential backoff)
+        const delay = Math.pow(2, i) * 1000;
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+
+      if (!response.ok) {
+        throw new Error(`API call failed with status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      const botResponseText = result.candidates?.[0]?.content?.parts?.[0]?.text || "Vinnie seems to be busy. Please try again or reach out via WhatsApp.";
+
+      // 3. Remove loading indicator and display bot response
+      removeLoadingIndicator();
+      addMessage(botResponseText, 'bot');
+      saveMessageToHistory('model', botResponseText);
+
+    } catch (error) {
+      console.error("Gemini API Error:", error);
+      removeLoadingIndicator();
+      addMessage("Sorry, I'm experiencing technical difficulties. Please refresh the page or use the WhatsApp button to connect directly!", 'bot');
+    } finally {
+      sendChatBtn.disabled = false;
+    }
+  }
+
+  // --- Event Listeners ---
+  chatBtn.addEventListener('click', toggleChatWindow);
+  closeChatBtn.addEventListener('click', toggleChatWindow);
+  sendChatBtn.addEventListener('click', sendMessage);
+  chatInputText.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && !sendChatBtn.disabled) {
+      sendMessage();
+    }
+  });
+
+  // Load history on initial page load
+  window.onload = loadHistory;
+
+</script>
+</body>
+</html>
+
