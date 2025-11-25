@@ -1050,7 +1050,7 @@
 <nav class="site-nav" id="navbar">
     <div class="wrap">
         <div class="nav-logo">
-            <img src="logo.png" alt="VINTECH Logo">
+            <img src="logo.png" alt="VINTECH Logo" loading="lazy">
             <span>VINTECH</span>
         </div>
         
@@ -1093,7 +1093,7 @@
                 </div>
             </div>
             <div class="slide-image">
-                <img src="hero.jpg" alt="Digital transformation">
+                <img src="hero.jpg" alt="Digital transformation" loading="lazy">
             </div>
         </div>
     </div>
@@ -1107,7 +1107,7 @@
                 </div>
             </div>
             <div class="slide-image">
-                <img src="service2.jpg" alt="Branding services">
+                <img src="service2.jpg" alt="Branding services" loading="lazy">
             </div>
         </div>
     </div>
@@ -1121,7 +1121,7 @@
                 </div>
             </div>
             <div class="slide-image">
-                <img src="service6.jpg" alt="Digital marketing">
+                <img src="service6.jpg" alt="Digital marketing" loading="lazy">
             </div>
         </div>
     </div>
@@ -1137,7 +1137,7 @@
     <div class="wrap">
         <div class="about-container">
             <div class="about-image">
-                <img src="about-image.jpg" alt="VINTECH Services">
+                <img src="about-image.jpg" alt="VINTECH Services" loading="lazy"> 
             </div>
             <div class="about-content">
                 <h3>Your Strategic Digital Partner</h3>
@@ -1149,6 +1149,41 @@
                     <a class="btn btn-contact" href="mailto:vintechdigitalservices@gmail.com?subject=Service%20Inquiry&body=hi%20vintech%20digital%20services%20can%20I%20have%20more%20info%20on%20your%20services">Email</a>
                 </div>
             </div>
+                        </div>
+            <!-- Video Section -->
+<section class="video-section" style="padding: 60px 0; background: #ffffff;">
+    <div class="wrap" style="max-width: 900px; margin: auto; text-align: center;">
+        
+        <h2 style="color: #001f3f; margin-bottom: 20px;">
+            Watch Our Intro Video
+        </h2>
+
+        <p style="color: #001f3f; margin-bottom: 30px;">
+            Learn more about how Vintech Digital Services can help your brand stand out.
+        </p>
+
+        <div class="video-container" 
+             style="
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                background: #001f3f;
+                border: 3px solid #ff7a00;
+                border-radius: 12px;
+                overflow: hidden;
+            ">
+            <video 
+                src="intro-video.mp4" 
+                controls 
+                style="
+                    position: absolute;
+                    top: 0; left: 0;
+                    width: 100%;
+                    height: 100%;
+                "
+            ></video>
+        </div>
+
         </div>
     </div>
 </section>
@@ -1157,14 +1192,14 @@
 <section class="services section-padding" id="services">
     <div class="wrap">
         <div class="section-header">
-            <h2>Our Premium Services</h2>
+            <h2>Our  Services</h2>
             <p>Comprehensive digital solutions designed to elevate your brand and accelerate growth</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <img src="service2.jpg" alt="Graphics Design">
+                <img src="service2.jpg" alt="Graphics Design" loading="lazy">
                 <div class="body">
-                    <h3>High-Converting Ad Creatives</h3>
+                    <h3>High-Converting Ad Creatives design</h3>
                     <p>Boost your brand with eye-catching graphics, logos, flyers, ad designs, and engaging video/animation. We create clean, high-impact visuals optimized for attention, engagement, and stronger ad performance across all platforms.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Attention-grabbing visual design</li>
@@ -1175,7 +1210,7 @@
                 </div>
             </div>
             <div class="service-card">
-                <img src="service6.jpg" alt="Advertising & Promotions">
+                <img src="service6.jpg" alt="Advertising & Promotions" loading="lazy">
                 <div class="body">
                     <h3>Strategic Advertising</h3>
                     <p>Data-driven ad campaigns with precise targeting, A/B testing, and detailed ROI tracking to maximize your advertising impact and deliver qualified leads.</p>
@@ -1188,7 +1223,7 @@
                 </div>
             </div>
             <div class="service-card">
-                <img src="service8.jpg" alt="Website Development">
+                <img src="service8.jpg" alt="Website Development" loading="lazy">
                 <div class="body">
                     <h3>Website Development</h3>
                     <p>Responsive business and e-commerce sites engineered to convert visitors into customers, with intuitive UX, fast loading times, and SEO-optimized structure.</p>
@@ -1254,8 +1289,203 @@
                 <h4>Expert Team</h4>
                 <p>Seasoned professionals with proven track records across diverse industries, delivering exceptional quality and innovative solutions.</p>
             </div>
+            <div></div>
+            <section>
+                </div>
+</section>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #001F54;
+  --orange: #FF6A00;
+  --white: #ffffff;
+}
+
+/* GRID STRUCTURE */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* CARD STYLING + ANIMATIONS */
+.why-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  border-top: 6px solid var(--orange);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: fadeUp 1.2s ease forwards;
+  transition: all .4s ease-in-out;
+}
+
+/* Stagger animation delay */
+.why-card:nth-child(1) { animation-delay: 0.2s; }
+.why-card:nth-child(2) { animation-delay: 0.4s; }
+.why-card:nth-child(3) { animation-delay: 0.6s; }
+.why-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* HOVER EFFECTS */
+.why-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(255,106,0,0.25);
+}
+
+/* ICON FLOAT ANIMATION */
+.why-icon i {
+  font-size: 45px;
+  color: var(--orange);
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+/* HEADINGS */
+.why-card h4 {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  font-family: 'Poppins';
+}
+
+/* TEXT */
+.why-card p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* STATS SECTION (unchanged) */
+.stats-section {
+  background: var(--navy);
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+}
+.stat-box {
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideUp 1.2s ease forwards;
+}
+.stat-box:nth-child(1) { animation-delay: 0.2s; }
+.stat-box:nth-child(2) { animation-delay: 0.4s; }
+.stat-box:nth-child(3) { animation-delay: 0.6s; }
+.stat-box:nth-child(4) { animation-delay: 0.8s; }
+
+.stat-number {
+  font-size: 52px;
+  font-weight: 700;
+  font-family: 'Abril Fatface', serif;
+  color: var(--orange);
+}
+
+.stat-text {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<section class="stats-section">
+
+  <div class="stat-box">
+    <div class="stat-number" data-target="150">0</div>
+    <div class="stat-text">Successful Projects Completed</div>
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-number" data-target="50">0</div>
+    <div class="stat-text">Happy Clients Scaling Their Business</div>
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-number" data-target="0" style="color: var(--orange); font-size: 48px;">
+      Long-Term
+    </div>
+    <div class="stat-text">Proven Industry Experience</div>
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-number" data-target="98">0</div>
+    <div class="stat-text">Client Satisfaction Rate</div>
+  </div>
+
+</section>
+
+<script>
+  // Count-up animation
+  const counters = document.querySelectorAll(".stat-number");
+
+  counters.forEach(counter => {
+    const animate = () => {
+      const target = +counter.getAttribute("data-target");
+      if (!target) return; // Skip "Long-Term" text
+
+      let count = 0;
+      const speed = 20; // Delay speed
+
+      const updateCount = () => {
+        if (count < target) {
+          count++;
+          counter.textContent = count + "+";
+          setTimeout(updateCount, speed);
+        } else {
+          counter.textContent = target + "+";
+        }
+      };
+      updateCount();
+    };
+
+    // Trigger animation when visible
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        animate();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(counter);
+  });
+</script>
           
                 </div>
+            </div>
+           <!--  GOOGLE FONT FOR STYLISH HEADER  -->
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+            </div>
             </div>
            <!--  GOOGLE FONT FOR STYLISH HEADER  -->
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -1330,77 +1560,235 @@
         margin: 0;
     }
 </style>
+<div></div></div>
+<!-- CLIENT REVIEW SECTION -->
+<div class="review-header">
+    <h2>WHAT OUR CLIENTS SAY ABOUT US</h2>
+    <p class="section-sub">
+        Trust the people we helped maximize their profit and digital potential.
+    </p>
+</div>
 
-  <div>
-      <h2>WHAT OUR CLIENTS SAY ABOUT US</h2>
-      <p class="section-sub">
-          Trust the people we helped maximize their profit and digital potential.
-      </p>
-  </div>
+<div class="review-container">
 
-  <div class="review-container">
+    <!-- CLIENT 1 -->
+    <div class="review-card">
+        <p class="review-text">
+            "Vintech Digital services is simply the best, I've seen and I'm convinced."
+        </p>
+        <div class="client-info">
+            <img src="client1.jpg" alt="Client 1" class="client-img">
+            <div>
+                <h4 class="client-name">Ikechukwu Jeremiah Ifeanyi</h4>
+                <p class="client-role">CEO • Dapper Clothings</p>
+            </div>
+        </div>
+    </div>
 
-      <!-- CLIENT 1 -->
-      <div class="review-card">
-          <p class="review-text">
-              "Vintech Digital services is simply the best, I've seen and I'm convinced."
-          </p>
-          <div class="client-info">
-              <img src="client1.jpg" alt="Client 1" class="client-img">
-              <div>
-                  <h4 class="client-name">Ikechukwu Jeremiah Ifeanyi</h4>
-                  <p class="client-role">CEO • Dapper Clothings</p>
-              </div>
-          </div>
+    <!-- CLIENT 2 -->
+    <div class="review-card">
+        <p class="review-text">
+            "Vintech provides much higher quality in business and creative services that helps 
+            businesses boom. It has helped my business grow more, so I recommend their services 
+            to anyone who wants the best for their business."
+        </p>
+        <div class="client-info">
+            <img src="client2.jpg" alt="Client 2" class="client-img">
+            <div>
+                <h4 class="client-name">Amuzie Felicia Anulika</h4>
+                <p class="client-role">Head Mistress • Above All Int'l School</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLIENT 3 -->
+    <div class="review-card">
+        <p class="review-text">
+            “They delivered exactly what I wanted with impressive speed. The design quality was 
+            top-notch, and the professional image generation they provided saved me money. 
+            Everything was done quickly, creatively, and with a high level of professionalism. 
+            I'm fully satisfied and highly recommend their services.”
+        </p>
+        <div class="client-info">
+            <img src="client3.jpg" alt="Client 3" class="client-img">
+            <div>
+                <h4 class="client-name">Collins Kelechukwu</h4>
+                <p class="client-role">CEO • Collins Gas Investment</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLIENT 4 -->
+    <div class="review-card">
+        <p class="review-text">
+            “Working with Vintech has been an excellent experience. The creativity, professionalism, 
+            and attention to detail are unmatched. Their communication is clear, and they always 
+            deliver exactly what you need. They are good at listening and identifying customer 
+            needs and corrections.”
+        </p>
+        <div class="client-info">
+            <img src="client4.jpg" alt="Client 4" class="client-img">
+            <div>
+                <h4 class="client-name">Chukwudubem</h4>
+                <p class="client-role">MD • Echo Collections Boutique</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+:root {
+    --orange: #FF6A00;
+    --navy: #001F54;
+    --dark: #0A0A0A;
+}
+
+/* HEADER ANIMATION */
+.review-header h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    animation: titleFloat 2s ease alternate infinite;
+}
+
+.review-header .section-sub {
+    text-align: center;
+    margin-top: 5px;
+    color: #333;
+    animation: fadeIn 1.6s ease forwards;
+}
+
+/* GRID */
+.review-container {
+    margin-top: 50px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* REVIEW CARD */
+.review-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+    border-left: 5px solid var(--orange);
+    opacity: 0;
+    transform: translateY(50px) scale(0.9) rotateX(10deg);
+    animation: cardReveal 1.2s ease forwards;
+    animation-timing-function: cubic-bezier(.29,.68,.38,1.4);
+    position: relative;
+    overflow: hidden;
+    transition: all .4s ease;
+}
+
+/* Stagger */
+.review-card:nth-child(1){animation-delay: .2s;}
+.review-card:nth-child(2){animation-delay: .4s;}
+.review-card:nth-child(3){animation-delay: .6s;}
+.review-card:nth-child(4){animation-delay: .8s;}
+
+/* HOVER EFFECT (3D LIFT) */
+.review-card:hover {
+    transform: translateY(-10px) scale(1.04) rotateX(0deg);
+    box-shadow: 0 12px 30px rgba(255,106,0,0.25);
+}
+
+/* GLOW BORDER ANIMATION */
+.review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    animation: slideGlow 3s linear infinite;
+}
+
+/* REVIEW TEXT */
+.review-text {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInText 1.6s ease forwards;
+    animation-delay: 1s;
+}
+
+/* CLIENT INFO */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.client-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--orange);
+    transition: .4s ease;
+    animation: floatPic 3s ease-in-out infinite;
+}
+
+/* Hover Zoom */
+.review-card:hover .client-img {
+    transform: scale(1.1);
+}
+
+/* KEYFRAMES */
+
+/* Title floating animation */
+@keyframes titleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Card reveal */
+@keyframes cardReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9) rotateX(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+    }
+}
+
+/* Text fade-in */
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Client picture float */
+@keyframes floatPic {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* glowing line */
+@keyframes slideGlow {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+</style>
+           </div>
       </div>
-
-      <!-- CLIENT 2 -->
-      <div class="review-card">
-          <p class="review-text">
-              "Vintech provides much higher quality in business and creative services that helps 
-              businesses boom. It has helped my business grow more, so I recommend their services 
-              to anyone who wants the best for their business."
-          </p>
-          <div class="client-info">
-              <img src="client2.jpg" alt="Client 2" class="client-img">
-              <div>
-                  <h4 class="client-name">Amuzie Felicia Anulika</h4>
-                  <p class="client-role">Head Mistress • Above All Int'l School</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- CLIENT 3 -->
-      <div class="review-card">
-          <p class="review-text">
-              “They delivered exactly what I wanted with impressive speed. The design quality was 
-              top-notch, and the professional image generation they provided saved me money. 
-              Everything was done quickly, creatively, and with a high level of professionalism. 
-              I'm fully satisfied and highly recommend their services.”
-          </p>
-          <div class="client-info">
-              <img src="client3.jpg" alt="Client 3" class="client-img">
-              <div>
-                  <h4 class="client-name">Collins Kelechukwu</h4>
-                  <p class="client-role">CEO • Collins Gas Investment</p>
-              </div>
-          </div>
-      </div>
-
-      <!-- CLIENT 4 -->
-      <div class="review-card">
-          <p class="review-text">
-              “Working with Vintech has been an excellent experience. The creativity, professionalism, 
-              and attention to detail are unmatched. Their communication is clear, and they always 
-              deliver exactly what you need. They are good in listening and identifying customer 
-              needs and corrections.”
-          </p>
-          <div class="client-info">
-              <img src="client4.jpg" alt="Client 4" class="client-img">
-              <div>
-                  <h4 class="client-name">Chukwudubem</h4>
-                  <p class="client-role">MD • Echo Collections Boutique</p>
-              </div>
           </div>
       </div>
 
@@ -1424,7 +1812,7 @@
 <section class="packages-promo section-padding">
     <div class="wrap">
         <div class="packages-wrap">
-            <img src="packages.jpg" alt="Service Packages">
+            <img src="packages.jpg" alt="Service Packages" loading="lazy">
             <div class="packages-content">
                 <h3>Tailored Solutions for Every Business Stage</h3>
                 <p>Whether you're launching a new venture, establishing brand presence, or scaling to the next level, we have precisely calibrated packages to match your ambitions and budget. Our tiered approach ensures you invest in exactly what you need—no more, no less.</p>
@@ -1441,7 +1829,7 @@
         <div class="academy-header">Master In-Demand Digital Skills</div>
         <div class="academy-container">
             <div class="academy-image">
-                <img src="academy-image.jpg" alt="VINTECH Academy Students">
+                <img src="academy-image.jpg" alt="VINTECH Academy Students" loading="lazy">
             </div>
             <div class="academy-content">
                 <p>Transform your career with our comprehensive digital skills training programs. Learn from industry practitioners through hands-on projects that simulate real-world challenges and build portfolio-ready work.</p>
@@ -1506,15 +1894,21 @@
             </div>
             <p>Premium digital solutions that transform brands and drive measurable business growth.</p>
             <p><i class="fas fa-phone"></i> <a href="tel:+2348124022971">+234 812 402 2971</a></p>
+              <p class="info-item"><i class="fas fa-location"></i> <a href="Anambra State,Nigeria">Anambra State,Nigeria</a>
             <p><i class="fas fa-envelope"></i> <a href="mailto:vintechdigitalservices@gmail.com">vintechdigitalservices@gmail.com</a></p>
         </div>
         <div class="col">
             <h4>Connect With Us</h4>
             <div class="social-icons">
-                <a href="https://wa.me/2348124022971" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/share/1DBb1LC5XD/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/vintechdigitalservices?igsh=MXgyOTZneHVwODMwaQ==" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@vintech.digital.s?_r=1&_t=ZS-91PyPIfnPF4" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/2348124022971" target="_blank">
+                  <img src="whatsapp.png"<i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/share/1DBb1LC5XD/" target="_blank"><img src="facebook.png"<i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/vintechdigitalservices?igsh=MXgyOTZneHVwODMwaQ==" target="_blank">
+                  <img src="instagram.png"
+                  <i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@vintech.digital.s?_r=1&_t=ZS-91PyPIfnPF4" target="_blank">
+                  <img src=tiktok.png
+                  <i class="fab fa-tiktok"></i></a>
             </div>
         </div>
         <div class="col">
